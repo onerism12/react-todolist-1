@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import Head from "next/head";
-import { Box, Container } from "@chakra-ui/react";
+import { Box, Container, Text } from "@chakra-ui/react";
 
 type Props = {
   children?: ReactNode;
@@ -25,7 +25,7 @@ const Layout = ({ children, title = "To Do List App" }: Props) => (
         alignItems="center"
         bg="#16ABF8"
       >
-        TO DO LIST APP
+        <Text data-cy="header-title">TO DO LIST APP</Text>
       </Container>
     </Box>
     <Container maxW="5xl">{children}</Container>

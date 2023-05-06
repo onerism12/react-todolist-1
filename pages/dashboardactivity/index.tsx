@@ -82,7 +82,7 @@ const DashboardActivity = () => {
   return (
     <Box data-cy="dashboard">
       <Flex justifyContent="space-between" alignItems="center" py="12">
-        <Text fontSize="4xl" fontWeight="bold">
+        <Text data-cy="activity-title" fontSize="4xl" fontWeight="bold">
           Activity
         </Text>
         <form onSubmit={handleSubmit}>
@@ -105,6 +105,7 @@ const DashboardActivity = () => {
       {activity.length === 0 ? (
         <form onClick={handleSubmit}>
           <Image
+            data-cy="activity-empty-state"
             display="flex"
             alignItems="center"
             src="/pic/activity-empty-state.png"
@@ -126,7 +127,12 @@ const DashboardActivity = () => {
                 <Link
                   href={`/dashboardtodolist?id=${item.id}&title=${item.title}`}
                 >
-                  <Text h="150px" fontSize="lg" fontWeight="bold">
+                  <Text
+                    data-cy="activity-item-title"
+                    h="150px"
+                    fontSize="lg"
+                    fontWeight="bold"
+                  >
                     {item.title}
                   </Text>
                 </Link>
@@ -135,7 +141,7 @@ const DashboardActivity = () => {
                   color="#888888"
                   alignItems="center"
                 >
-                  <Text>
+                  <Text data-cy="activity-item-date">
                     {format(new Date(item.created_at), "dd MMM yyyy")}
                   </Text>
                   <Icon
@@ -144,7 +150,7 @@ const DashboardActivity = () => {
                     h={6}
                     onClick={() => handleDeleteClick(item.id)}
                     cursor="pointer"
-                    data-cy="activity-item-delete-button"
+                    data-cy="modal-delete"
                   />
                   <DeleteModal
                     id={itemIdToDelete}

@@ -5,7 +5,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 const IndexPage = () => (
   <ChakraProvider>
-    <Layout data-cy="header-title" title="TO DO LIST APP">
+    <Layout title="TO DO LIST APP">
       <DashboardActivity />
     </Layout>
   </ChakraProvider>
